@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Task 3</title>
+    <script>
+    function sin(){
+		cal.result.value=Math.sin(cal.result.value);
+	}
+
+	function cos(){
+		cal.result.value=Math.cos(cal.result.value);
+	}
+
+	function tan(){
+		cal.result.value=Math.tan(cal.result.value);
+	}
+
+	function remv(){
+		cal.result.value =" ";
+	}
+
+	function square(){
+		cal.result.value = Math.pow(cal.result.value, 2);
+	}
+
+	function cube(){
+		cal.result.value = Math.pow(cal.result.value, 3);
+	}
+
+	function sqrt2(){
+		cal.result.value = Math.pow(cal.result.value, 1/2);
+	}
+
+	function sqrt3(){
+		cal.result.value = Math.pow(cal.result.value, 1/3);
+	}
+
+	function number(a){
+		cal.result.value += a;
+	}
+
+	function backspace(){
+	    var input = document.getElementById('demo');
+	    var position = input.selectionStart;
+
+        var a = cal.result.value;
+
+
+        //condition not written properly
+        if(a == position) {
+
+	    cal.result.value = position.substr(0, position.length-1);
+
+    }
+    else{
+         cal.result.value = a.substr(0, a.length-1);
+    }
+
+    }
+
+	function log(){
+		cal.result.value=Math.log(cal.result.value);
+	}
+
+	function equal(){
+		cal.result.value = eval(cal.result.value);
+	}
+ </script>
+    <style>
+        header{
+            background-color: black;
+            color: white;
+        }
+        form{
+            position: relative;
+            margin-top: 50px;
+        }
+        button{
+            height:40px;
+            width:45px;
+        }
+        .clear{
+            background-color: orange;
+        }
+     </style>
+</head>
+<body style="background-color: lightslategray;">
+
+<div class="container">
+    <header><h1 style="text-align:center">SCIENTIFIC CALCULATOR</h1></header>
+    <form name="cal">
+        <table align="center">
+            <tr>
+                <td colspan="4"> <input type="text" id="demo" name="result" placeholder="enter your number" style="text-align:right"> </td>
+            </tr>
+            <tr>
+                <td><button type="button" value="sin" onclick="sin()"> sin </button> </td>
+                <td><button type="button" value="cos" onclick="cos()"> cos </button> </td>
+                <td><button type="button" value="tan" onclick="tan()"> tan </button> </td>
+                <td colspan="2"><button type="button" value="C" class="clear" onclick="remv()"> C </button></td>
+            </tr>
+            <tr>
+                <td><button type="button" value="x^2" onclick="square()"> x<sup>2</sup> </button> </td>
+                <td><button type="button" value="x^3" onclick="cube()"> x<sup>3</sup></button> </td>
+                <td><button type="button" value="sqrt2" onclick="sqrt2()"> &radic; </button> </td>
+                <td><button type="button" value="sqrt3" onclick="sqrt3()"> &#8731; </button> </td>
+            </tr>
+            <tr>
+                <td><button type="button" value="1" onclick="number(value)"> 1 </button> </td>
+                <td><button type="button" value="2" onclick="number(value)"> 2 </button> </td>
+                <td><button type="button" value="3" onclick="number(value)"> 3 </button> </td>
+                <td><button type="button" value="backspace" onclick="backspace()">
+                    <img src="backspace.png" height="14px" width="14px"> </button> </td>
+            </tr>
+            <tr>
+                <td><button type="button" value="4" onclick="number(value)"> 4 </button> </td>
+                <td><button type="button" value="5" onclick="number(value)"> 5 </button> </td>
+                <td><button type="button" value="6" onclick="number(value)"> 6 </button> </td>
+                <td><button type="button" value="-" onclick="number(value)"> - </button> </td>
+            </tr>
+            <tr>
+                <td><button type="button" value="7" onclick="number(value)"> 7 </button> </td>
+                <td><button type="button" value="8" onclick="number(value)"> 8 </button> </td>
+                <td><button type="button" value="9" onclick="number(value)"> 9 </button> </td>
+                <td><button type="button" value="/" onclick="number(value)"> / </button> </td>
+            </tr>
+            <tr>
+                <td><button type="button" value="." onclick="number(value)"> . </button> </td>
+                <td><button type="button" value="0" onclick="number(value)"> 0 </button> </td>
+                <td><button type="button" value="*" onclick="number(value)"> * </button> </td>
+                <td><button type="button" value="%" onclick="number(value)"> % </button> </td>
+            </tr>
+            <tr rowspan="3">
+                <td><button type="button" value="+" onclick="number(value)"> + </button> </td>
+                <td><button type="button" value="log" onclick="log()"> log </button> </td>
+                <td colspan="2"><button type="button" value="=" onclick="equal()" class="equal"> = </button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
